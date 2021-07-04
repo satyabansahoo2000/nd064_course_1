@@ -1,29 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  creationTimestamp: null
   labels:
-    app: nginx
-    tag: alpine
-  name: nginx-alpine
+    app: busybox
+  name: busybox
   namespace: demo
 spec:
-  replicas: 3
+  replicas: 5
   selector:
     matchLabels:
-      app: nginx
-      tag: alpine
-  strategy:
-    rollingUpdate:
-      maxSurge: 25%
-      maxUnavailable: 25%
-    type: RollingUpdate
+      app: busybox
+  strategy: {}
   template:
     metadata:
+      creationTimestamp: null
       labels:
-        app: nginx
-        tag: alpine
+        app: busybox
     spec:
       containers:
-      - image: nginx:alpine
-        imagePullPolicy: IfNotPresent
-        name: nginx-alpine
+      - image: busybox
+        name: busybox
+        resources: {}
+status: {}
