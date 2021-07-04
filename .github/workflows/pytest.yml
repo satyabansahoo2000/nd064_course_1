@@ -19,8 +19,6 @@ jobs:
         python-version: [2.7, 3.5, 3.6, 3.7, 3.8]
     ## Define a sequence of steps to be executed
     steps:
-    - name: GitGuardian Shield Action
-      uses: GitGuardian/gg-shield-action@v1.1.0
       ## Use the public `checkout` action  in version v2  
       ## to checkout the existing code in the repository
     - uses: actions/checkout@v2
